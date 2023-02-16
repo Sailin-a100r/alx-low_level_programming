@@ -3,9 +3,9 @@
 /**
  * main - Entry point
  *
- * Output to stderr 
+ * Output to stderr
  *
- * Return: 1
+ * Return: 1(special case)
  */
 int main(void)
 {
