@@ -30,23 +30,23 @@ void print_times_table(int n)
 			else
 			{
 				_putchar(' ');
-				if (n / 100 == 0)
+				if (r / 100 == 0)
 				{
 					_putchar(' ');
 				}
 				else
 				{
-					_putchar((n / 100) + '0');
+					_putchar((r / 100) + '0');
 				}
-				if (n / 10 == 0)
+				if (r / 10 == 0)
 				{
 					_putchar(' ');
 				}
 				else
 				{
-					_putchar((n / 10) + '0');
+					_putchar((r / 10) + '0');
 				}
-				_putchar((n % 10) + '0');
+				_putchar((r % 10) + '0');
 				if (j != 9)
 				{
 					_putchar(',');
