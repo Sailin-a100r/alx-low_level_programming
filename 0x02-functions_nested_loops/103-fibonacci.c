@@ -10,7 +10,6 @@ int main(void)
 {
 	long i;
 	long j;
-	int counter;
 	long sum;
 
 	sum = 0;
