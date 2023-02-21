@@ -9,6 +9,7 @@
 void print_times_table(int n)
 {
 	int r;
+	int tenth;
 	int i;
 	int j;
 
@@ -25,7 +26,8 @@ void print_times_table(int n)
 			if (j == 0)
 			{
 				_putchar('0');
-				_putchar(',');
+				if (j != n)
+					_putchar(',');
 			}
 			else
 			{
@@ -44,7 +46,8 @@ void print_times_table(int n)
 				}
 				else
 				{
-					_putchar((r / 10) + '0');
+					tenth = (r % 100) / 10;
+					_putchar(tenth  + '0');
 				}
 				_putchar((r % 10) + '0');
 				if (j != n)
