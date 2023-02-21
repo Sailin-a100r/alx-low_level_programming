@@ -19,7 +19,7 @@ int main(void)
 		printf("%li, ", i);
 		i += j;
 		printf("%li", j);
-		j +=i;
+		j += i;
 		if (counter != 24)
 		{
 			printf(", ");
