@@ -20,7 +20,7 @@ int main(void)
 		i += j;
 		printf("%li", j);
 		j += i;
-		if (counter != 49)
+		if (counter != 48)
 		{
 			printf(", ");
 		}
