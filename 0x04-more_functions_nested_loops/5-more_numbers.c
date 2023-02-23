@@ -21,10 +21,7 @@ void more_numbers(void)
 			{
 				_putchar('1');
 			}
-			else
-			{
-				_putchar('0' + j % 10);
-			}
+			_putchar('0' + j % 10);
 		}
 		_putchar('\n');
 	}
