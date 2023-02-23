@@ -5,7 +5,6 @@
  *
  * @n: length of line
  *
- * 
  */
 
 void print_line(int n)
