@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_array - function that prints n lements fo an array.
+ * print_array - function that prints n elements of an array.
  * @a : Array of ints
  * @n : number of elements to print
  */
@@ -11,7 +11,7 @@ void print_array(int *a, int n)
 	int i;
 
 	i = 0;
-	while (i != n)
+	while (i < n)
 	{
 		printf("%i", a[i]);
 		i++;
