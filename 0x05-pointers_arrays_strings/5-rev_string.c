@@ -8,17 +8,23 @@
 
 void rev_string(char *s)
 {
-	int sindex;
-	int revindex;
-	char rev[sizeof(s)];
-
-	sindex = strlen(s);
-	revindex = 0;
-	while (sindex >= 0)
+	int i;
+	int j;
+	int con;
+	char temp[sizeof(s) + 1];
+	
+	con = strlen(s);
+	j = strlen(s) - 1;
+	for (i = 0; i <= con; i++)
 	{
-		rev[revindex] = s[sindex];
-		sindex--;
-		revindex++;
+		temp[i] = s[i];
 	}
-	*s = *rev;
+
+	for (i = 0; i < con; i++)
+	{
+		s[i] = temp[j];
+		j--;
+	}
+
+
 }
