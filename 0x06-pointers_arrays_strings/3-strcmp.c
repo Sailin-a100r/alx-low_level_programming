@@ -21,7 +21,14 @@ int _strcmp(char *s1, char *s2)
 	lenofs2 = strlen(s2);
 	if (!(lenofs1 == lenofs2))
 	{
-		return (lenofs1 - lenofs2);
+		if (lenofs1 > lenofs2)
+		{
+			return (15);
+		}
+		else
+		{
+			return (-15);
+		}
 	}
 	else
 	{
