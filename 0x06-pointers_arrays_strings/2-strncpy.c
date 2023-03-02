@@ -13,8 +13,10 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 	int limit;
+	int y;
 
-	limit = n < strlen(src) ? n : strlen(src);
+	y = strlen(src);
+	limit = n < y ? n : y;
 	i = 0;
 	while (i < limit)
 	{
