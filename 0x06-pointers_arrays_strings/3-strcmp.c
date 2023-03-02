@@ -15,24 +15,19 @@ int _strcmp(char *s1, char *s2)
 {
 	int lenofs1;
 	int lenofs2;
+	int shorter;
 	int i;
 
 	lenofs1 = strlen(s1);
 	lenofs2 = strlen(s2);
+	shorter = lenofs1 > lenofs2 ? lenofs2 : lenofs1;
 	if (!(lenofs1 == lenofs2))
 	{
-		if (lenofs1 > lenofs2)
-		{
-			return (15);
-		}
-		else
-		{
-			return (-15);
-		}
+		return (s1[0] - s2[0]);
 	}
 	else
 	{
-		for (i = 0; i < lenofs1; i++)
+		for (i = 0; i < shorter; i++)
 		{
 			if (s1[i] == s2[i])
 			{
@@ -40,7 +35,7 @@ int _strcmp(char *s1, char *s2)
 			}
 			else
 			{
-				return (15);
+				return (s1[i] - s2[i]);
 			}
 		}
 	}
