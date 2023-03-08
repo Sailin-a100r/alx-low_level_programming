@@ -8,8 +8,9 @@
  * @n: number to find its root
  *
  * Return: natural square root, or -1 if there isn't one
+ *
  */
-int squareroot(int a, int set);
+
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
