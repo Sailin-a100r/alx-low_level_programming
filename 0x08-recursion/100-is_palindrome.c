@@ -18,4 +18,6 @@ int is_palindrome(char *s)
 	}
 	else
 	{
-		return (is_palindrome())
+		return (is_palindrome());
+	}
+}
