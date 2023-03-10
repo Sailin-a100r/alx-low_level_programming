@@ -49,11 +49,7 @@ int main(int argc, char *argv[])
 			change -= 2;
 			count++;
 		}
-		while (change >= 1)
-		{
-			change -= 1;
-			count++;
-		}
+		count = count + change;
 		printf("%d\n", count);
 		return (0);
 	}
