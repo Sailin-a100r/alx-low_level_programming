@@ -13,7 +13,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *p;
+	char *p;
 	int bytes;
 
 	if (nmemb == 0 || size == 0)
@@ -24,6 +24,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (p == NULL)
 		return (NULL);
 
-	return (p);
+	while (bytes >= 0)
+	{
+		p[bytes]  = '\0';
+		bytes--;
+	}
+	return ((void *)p);
 
 }
