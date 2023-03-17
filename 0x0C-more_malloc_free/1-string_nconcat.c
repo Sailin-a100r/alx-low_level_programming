@@ -20,14 +20,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i, s1len, s2len, num;
 
 	num = n;
-	s2len = strlen(s2);
-	s1len = strlen(s1);
 	if (num == 0 || s2 == NULL)
 	{
 		s2 = "";
+		num = 0;
 	}
 	if (s1 == NULL)
 		s1 = "";
+	s1len = strlen(s1);
+	s2len = strlen(s2);
 	if (num > s2len)
 	{
 		num = s2len;
