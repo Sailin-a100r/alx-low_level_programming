@@ -26,8 +26,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	while (bytes >= 0)
 	{
-		p[bytes]  = '\0';
 		bytes--;
+		p[bytes]  = '\0';
 	}
 	return ((void *)p);
 
