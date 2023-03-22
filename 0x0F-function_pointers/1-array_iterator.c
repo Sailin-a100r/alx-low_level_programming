@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * array_iterator - function that performs a certain function on all elements of a given array
+ * array_iterator - function that performs a certain function
+ *on all elements of a given array
  *
  * @array: array of elements
  * @size: number of elements to perform the function on
@@ -13,7 +14,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	if (array && size && action)
 	{
-		
+
 		int i, limit;
 
 		limit = size;
