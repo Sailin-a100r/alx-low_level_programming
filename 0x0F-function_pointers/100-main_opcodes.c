@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 /**
- *
  * main - program that prints the opcode
  * of its main function
  *
@@ -30,12 +29,20 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
+	if (num_of_bytes == 0)
+	{
+		return (0);
+	}
 
 	i = 0;
 	while (i < num_of_bytes)
 	{
-		printf("%02hhx ", opcode_array[i]);
+		printf("%02hhx", opcode_array[i]);
 		i++;
+		if (i != num_of_bytes)
+		{
+			printf(" ");
+		}
 	}
 	printf("\n");
 	return (0);
