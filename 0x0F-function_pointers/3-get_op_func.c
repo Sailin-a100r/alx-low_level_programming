@@ -5,7 +5,7 @@
 
 /**
  * get_op_func - function to select the correct function
- * for the operation 
+ * for the operation
  *
  * @s : operator to select the function
  *
@@ -14,8 +14,7 @@
 
 int (*get_op_func(char *s))(int, int)
 {
-	op_t ops[] = 
-	{
+	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
