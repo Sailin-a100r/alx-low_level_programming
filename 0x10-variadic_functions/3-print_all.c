@@ -13,16 +13,14 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i, num;
+	int i;
 	char *string, *sep;
-
-	num = strlen(format);
 
 	va_start(args, format);
 	i = 0;
 	if (format)
 	{
-		while (i < num)
+		while (format[i])
 		{
 			switch (format[i])
 			{
@@ -45,7 +43,7 @@ void print_all(const char * const format, ...)
 					continue;
 			}
 			i++;
-			sep = (i == num) ? "" : ", ";
+			sep = (!(format[i])) ? "" : ", ";
 			printf("%s", sep);
 		}
 	}
