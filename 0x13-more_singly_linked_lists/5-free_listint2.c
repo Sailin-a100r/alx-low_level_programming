@@ -10,14 +10,18 @@ void free_listint2(listint_t **head)
 {
 	listint_t *temp;
 
-	if (*head == NULL)
+	/* check for null pointer */
+	if (head == NULL)
 		return;
 
+	/* free each node */
 	while (*head)
 	{
 		temp = (*head)->next;
 		free(*head);
 		*head = temp;
 	}
+	
+	/* set head to NULL */
 	*head = NULL;
 }
