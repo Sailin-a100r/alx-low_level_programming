@@ -15,7 +15,7 @@ int pop_listint(listint_t **head)
 	listint_t *temp;
 
 	/* null head */
-	if (!head)
+	if (!*head)
 		return (0);
 
 	/* store next node */
