@@ -8,7 +8,7 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *arr[100], *pt;
+	listint_t *starter, *pt;
 	int index, i;
 
 	if (!head)
@@ -18,14 +18,15 @@ listint_t *find_listint_loop(listint_t *head)
 	pt = head;
 	while (pt)
 	{
+		starter = head;
 		for (i = 0; i < index; i++)
 		{
-			if (pt == arr[i])
+			if (pt == starter)
 			{
 				return (pt);
 			}
+			starter = starter->next;
 		}
-		arr[index] = pt;
 		index++;
 		pt = pt->next;
 	}
