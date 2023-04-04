@@ -22,11 +22,9 @@ listint_t *find_listint_loop(listint_t *head)
 		{
 			if (pt == arr[i])
 			{
-				printf("-> [%p] %i\n", (void *)pt, pt->n);
 				return (pt);
 			}
 		}
-		printf("[%p] %i\n", (void *)pt, pt->n);
 		arr[index] = pt;
 		index++;
 		pt = pt->next;
