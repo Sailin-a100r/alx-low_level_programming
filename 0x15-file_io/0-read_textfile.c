@@ -12,11 +12,9 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t size;
-	int fd;
+	ssize_t size, fd;
 	char *buffer;
 
-	letters = letters ? letters : 1024;
 	if (filename == NULL)
 		return (0);
 	/* open the file */
@@ -37,12 +35,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* write to stdout */
 	size = write(STDOUT_FILENO, buffer, size);
 	free(buffer);
+	close(fd);
 	if (size == -1)
-	{
 		return (0);
-	}
-	else
-	{
-		return (size);
-	}
+
+	return (size);
 }
