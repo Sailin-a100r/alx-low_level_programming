@@ -22,21 +22,22 @@ int main(int argc, char *argv[])
 	}
 	fdf = open(argv[1], O_RDONLY);
 	fdt = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	while (rres == 1024)
+	while (rres > 0)
 	{
-		rres = read(fdf, &buffer, rres);
+		rres = read(fdf, &buffer, 1024);
 		if (check_read_error(fdf, rres, argv[2]))
 			exit(98);
+		fdt = open(argv[2], O_WRONLY | O_APPEND);
 		wres = write(fdt, &buffer, rres);
 		if (check_write_error(fdt, wres, argv[1]))
 			exit(99);
 	}
-	if (close(fdf))
+	if (close(fdf) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdf);
 		exit(100);
 	}
-	if (close(fdt))
+	if (close(fdt) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdt);
 		exit(100);
