@@ -8,20 +8,21 @@
 
 void print_binary(unsigned long int n)
 {
-	int i, place;
-	unsigned long int bit;
+	unsigned long int bit, i, place;
 
 	if (!n)
 		_putchar('0');
 
-	place = 0;
-	for (i = 0; i < 64; i++)
+	place = bit = 0;
+	for (i = 0; i < 32; i++)
 	{
 		place++;
+		/* printf("bit = %li, n = %li\n", bit, n); */
 		bit = (1 << i);
 		if (n < bit)
 			break;
 	}
+
 	place--;
 	while (place)
 	{
