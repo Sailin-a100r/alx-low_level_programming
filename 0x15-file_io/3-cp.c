@@ -12,9 +12,8 @@
 int main(int argc, char *argv[])
 {
 	int fdf, fdt, rres, wres;
-	char *buffer;
+	char buffer[1024];
 
-	buffer = buffer_malloc(argv[1]);
 	rres = 1024;
 	if (argc != 3)
 	{
@@ -26,20 +25,14 @@ int main(int argc, char *argv[])
 	while (rres > 0)
 	{
 		rres = read(fdf, buffer, 1024);
-		if (check_read_error(fdf, rres, argv[2]) == 1)
-		{
-			free(buffer);
+		if (check_read_error(fdf, rres, argv[2]))
 			exit(98);
-		}
+
 		fdt = open(argv[2], O_WRONLY | O_APPEND);
 		wres = write(fdt, buffer, rres);
-		if (check_write_error(fdt, wres, argv[1]) == 1)
-		{
-			free(buffer);
+		if (check_write_error(fdt, wres, argv[1]))
 			exit(99);
-		}
 	}
-	free(buffer);
 	if (close(fdf) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdf);
@@ -90,25 +83,4 @@ int check_write_error(int fd, int wres, char *filename)
 		return (1);
 	}
 	return (0);
-}
-/**
- * buffer_malloc - function that allocates memory for a buffer
- *
- * @filename: name of file to read from
- *
- * Return: pointer to allocated memory
- */
-char *buffer_malloc(char *filename)
-{
-	char *buffer;
-
-	buffer = malloc(1024 * sizeof(char));
-
-	if (buffer == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
-		exit(99);
-	}
-
-	return (buffer);
 }
