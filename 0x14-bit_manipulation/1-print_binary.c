@@ -8,16 +8,19 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int bit, i, place;
+	unsigned long int bit, i, place, limit;
 
+	limit = sizeof(unsigned long int) * 8;
 	if (!n)
+	{
 		_putchar('0');
+		return;
+	}
 
 	place = bit = 0;
-	for (i = 0; i < 32; i++)
+	for (i = 0; i < limit; i++)
 	{
 		place++;
-		/* printf("bit = %li, n = %li\n", bit, n); */
 		bit = (1 << i);
 		if (n < bit)
 			break;
@@ -27,14 +30,6 @@ void print_binary(unsigned long int n)
 	while (place)
 	{
 		place--;
-		bit = n & (1 << place);
-		if (bit == 0)
-		{
-			_putchar('0');
-		}
-		else
-		{
-			_putchar('1');
-		}
+		bit = (n & (1 << place)) == 0 ? _putchar('0') : _putchar('1');
 	}
 }
