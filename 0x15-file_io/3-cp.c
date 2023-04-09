@@ -27,12 +27,19 @@ int main(int argc, char *argv[])
 	{
 		rres = read(fdf, buffer, 1024);
 		if (check_read_error(fdf, rres, argv[2]) == 1)
+		{
+			free(buffer);
 			exit(98);
+		}
 		fdt = open(argv[2], O_WRONLY | O_APPEND);
 		wres = write(fdt, buffer, rres);
 		if (check_write_error(fdt, wres, argv[1]) == 1)
+		{
+			free(buffer);
 			exit(99);
+		}
 	}
+	free(buffer);
 	if (close(fdf) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdf);
