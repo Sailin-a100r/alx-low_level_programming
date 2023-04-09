@@ -12,6 +12,5 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 int check_read_error(int, int, char *);
 int check_write_error(int, int, char *);
-char *buffer_malloc(char *filename);
 
 #endif
