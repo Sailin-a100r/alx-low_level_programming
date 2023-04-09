@@ -25,21 +25,19 @@ int main(int argc, char *argv[])
 	while (rres > 0)
 	{
 		rres = read(fdf, &buffer, 1024);
-		if (check_read_error(fdf, rres, argv[2]))
+		if (check_read_error(fdf, rres, argv[2]) == 1)
 			exit(98);
 		fdt = open(argv[2], O_WRONLY | O_APPEND);
 		wres = write(fdt, &buffer, rres);
-		if (check_write_error(fdt, wres, argv[1]))
+		if (check_write_error(fdt, wres, argv[1]) == 1)
 			exit(99);
-	}
-	rres = close(fdf);
-	if (rres == -1)
+	}i
+	if (close(fdf) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdf);
 		exit(100);
 	}
-	wres = close(fdt);
-	if (wres == -1)
+	if (close(fdt) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdt);
 		exit(100);
