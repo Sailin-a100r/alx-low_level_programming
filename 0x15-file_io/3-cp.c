@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		wres = write(fdt, &buffer, rres);
 		if (check_write_error(fdt, wres, argv[1]) == 1)
 			exit(99);
-	}i
+	}
 	if (close(fdf) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdf);
