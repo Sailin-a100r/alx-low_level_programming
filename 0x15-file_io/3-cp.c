@@ -32,12 +32,14 @@ int main(int argc, char *argv[])
 		if (check_write_error(fdt, wres, argv[1]))
 			exit(99);
 	}
-	if (close(fdf) == -1)
+	rres = close(fdf);
+	if (rres == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdf);
 		exit(100);
 	}
-	if (close(fdt) == -1)
+	wres = close(fdt);
+	if (wres == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdt);
 		exit(100);
