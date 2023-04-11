@@ -12,7 +12,10 @@ void print_binary(unsigned long int n)
 
 	limit = sizeof(unsigned long int) * 8;
 	if (!n)
+	{
 		_putchar('0');
+		return;
+	}
 	if (n == 1)
 	{
 		_putchar('1');
