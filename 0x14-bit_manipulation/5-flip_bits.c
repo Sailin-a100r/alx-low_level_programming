@@ -28,8 +28,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	num = 0;
 	for (i = 0; i <= place; i++)
 	{
-		mask = (n ^ m) & (1 << i);
-		if (mask != 0)
+		bit = mask & (1 << i);
+		if (bit != 0)
 			num++;
 	}
 	return (num);
