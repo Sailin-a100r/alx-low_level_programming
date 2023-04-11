@@ -12,13 +12,21 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int mask, i;
+	unsigned long int mask, i, bit, place;
 	unsigned int num;
-	/*unsigned long int filter;*/
+
+	mask = n ^ m;
+	place = bit = 0;
+	for (i = 0; i < 63; i++)
+	{
+		place++;
+		bit = (1 << i);
+		if (mask < bit )
+			break;
+	}
 
 	num = 0;
-	/*filter  = n ^ m;*/
-	for (i = 0; i <= 63; i++)
+	for (i = 0; i <= place; i++)
 	{
 		mask = (n ^ m) & (1 << i);
 		if (mask != 0)
