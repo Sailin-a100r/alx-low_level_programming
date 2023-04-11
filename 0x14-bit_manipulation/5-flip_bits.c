@@ -21,7 +21,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		place++;
 		bit = (1 << i);
-		if (mask < bit )
+		if (mask < bit)
 			break;
 	}
 
